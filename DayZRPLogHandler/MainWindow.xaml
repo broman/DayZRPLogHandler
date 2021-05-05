@@ -1,0 +1,87 @@
+﻿<Window x:Class="DayZRPLogHandler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DayZRPLogHandler"
+        Icon="favicon.ico"
+        mc:Ignorable="d"
+        Title="DayZRP Log Handler by Whitename" Height="603.618" Width="1088.059" Background="#FFF0F0F0"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Control}">
+            <Setter Property="Background" Value="#FFF0F0F0"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Orientation="Horizontal" Grid.Column="6">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0,34,0,27">
+                <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"  Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Margin" Value="10,0,10,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock TextWrapping="Wrap" Text="File Path:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBox Name="FilePathBox" Width="150" TextWrapping="NoWrap" VerticalContentAlignment="Center"/>
+                    <Button Content="Upload" Width="75" Click="UploadButtonClick"/>
+                </StackPanel>
+
+                <StackPanel HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Margin" Value="10,0,10,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock TextWrapping="Wrap" Text="Filter:" HorizontalAlignment="Center" VerticalAlignment="Center" Width="47" Height="16"/>
+                    <TextBox Name="SearchText" Width="150" TextWrapping="NoWrap" VerticalContentAlignment="Center" IsEnabled="False">
+                    </TextBox>
+                    <Button Name = "SearchButton" Content="Search" Width="75" Click="SearchButtonClick" IsEnabled="False"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Image Margin="0,10,0,10" Source="logo.png" HorizontalAlignment="Right" Width="382"/>
+        </StackPanel>
+        <Grid HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top">
+            <TabControl HorizontalAlignment="Left" Height="396" Margin="10,10,0,0" VerticalAlignment="Top" Width="894">
+                <TabControl.Resources>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+                        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="IsReadOnly" Value="True" />
+                    </Style>
+                </TabControl.Resources>
+                <TabItem Header="Kills">
+                    <TextBox Name="KillLogs"/>
+                </TabItem>
+                <TabItem Header="Hits">
+                    <TextBox Name="HitLogs"/>
+                </TabItem>
+                <TabItem Header="Chats">
+                    <TextBox Name="ChatLogs"/>
+                </TabItem>
+                <TabItem Header="Building">
+                    <TextBox Name="BuildingLogs"/>
+                </TabItem>
+                <TabItem Header="Position">
+                    <TextBox Name="PositionLogs"/>
+                </TabItem>
+                <TabItem Header="Connection">
+                    <TextBox Name="ConnectionLogs"/>
+                </TabItem>
+            </TabControl>
+            <StackPanel HorizontalAlignment="Left" Height="74" Margin="909,160,0,0" VerticalAlignment="Top" Width="141">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type CheckBox}">
+                        <Setter Property="Margin" Value="0,10,0,10"/>
+                    </Style>
+                </StackPanel.Resources>
+                <CheckBox Name="IDBox" Content="Hide ID" HorizontalAlignment="Right" Width="141" Checked="HideIDs" Unchecked="UnhideIDs" IsEnabled="False"/>
+                <CheckBox Name="PosBox" Content="Hide Positions" Checked="HidePos" Unchecked="UnhidePos" IsEnabled="False"/>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+</Window>

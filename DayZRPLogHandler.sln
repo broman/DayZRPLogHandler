@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayZRPLogHandler", "DayZRPLogHandler\DayZRPLogHandler.csproj", "{15B8DA93-BFE5-44BD-AE95-9D1B9697123A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DayZRP Log Handler", "DayZRP Log Handler\DayZRP Log Handler.vdproj", "{3C76AAA3-8108-478F-A043-7BC580CF5430}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B8DA93-BFE5-44BD-AE95-9D1B9697123A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B8DA93-BFE5-44BD-AE95-9D1B9697123A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B8DA93-BFE5-44BD-AE95-9D1B9697123A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B8DA93-BFE5-44BD-AE95-9D1B9697123A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C76AAA3-8108-478F-A043-7BC580CF5430}.Debug|Any CPU.ActiveCfg = Debug
+		{3C76AAA3-8108-478F-A043-7BC580CF5430}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15606788-0FC3-43EF-8BE0-99DC1E5F6DC8}
+	EndGlobalSection
+EndGlobal
