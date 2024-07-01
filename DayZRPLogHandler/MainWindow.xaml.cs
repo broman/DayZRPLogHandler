@@ -1,29 +1,26 @@
 ﻿using System.Linq;
+using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Win32;
 
 namespace DayZRPLogHandler {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow {
+    public partial class MainWindow : Window {
         private Parser _parser = new();
         private readonly TextBox[] _logs;
 
         public MainWindow() {
             InitializeComponent();
-            _logs = new[] {KillLogs, HitLogs, ChatLogs, BuildingLogs, PositionLogs, ConnectionLogs};
+            _logs = new[] { KillLogs, HitLogs, ChatLogs, BuildingLogs, PositionLogs, ConnectionLogs };
         }
 
         private void UploadButtonClick(object sender, RoutedEventArgs e) {
-            _parser = new Parser();
-            var upload = new OpenFileDialog {Filter = "DayZ admin log files (*.ADM)|*.ADM;|Text files (*.txt)|*.txt"};
-            if(upload.ShowDialog() != true) return;
+            _parser = new();
+            var upload = new OpenFileDialog { Filter = "DayZ admin log files (*.ADM)|*.ADM;|Text files (*.txt)|*.txt" };
+            if (upload.ShowDialog() != true) return;
             FilePathBox.Text = upload.FileName;
             _parser.Parse(upload.FileName);
 
-            foreach(var log in _logs) {
+            foreach (var log in _logs) {
                 log.Text = "";
             }
 
@@ -46,15 +43,15 @@ namespace DayZRPLogHandler {
 
         private void Search(string text) {
             SetToDefault();
-            if(IDBox.IsChecked == true) {
+            if (IDBox.IsChecked == true) {
                 HideIDs();
             }
-            else if(PosBox.IsChecked == true) {
+            else if (PosBox.IsChecked == true) {
                 HidePos();
             }
 
-            foreach(var log in _logs) {
-                if(log.Equals(ChatLogs)) {
+            foreach (var log in _logs) {
+                if (log.Equals(ChatLogs)) {
                     // Explicit exception to the double-space removal for chat logs.
                     log.Text = string.Join("\n", log.Text.Split('\n').Where(s => s.ToLower().Contains(text.ToLower())));
                 }
@@ -70,7 +67,7 @@ namespace DayZRPLogHandler {
         }
 
         private void HideIDs() {
-            if(PosBox.IsChecked == true) {
+            if (PosBox.IsChecked == true) {
                 NoIDNoPos();
             }
             else {
@@ -84,7 +81,7 @@ namespace DayZRPLogHandler {
         }
 
         private void UnhideIDs() {
-            if(PosBox.IsChecked == true) {
+            if (PosBox.IsChecked == true) {
                 NoPos();
             }
             else {
@@ -98,7 +95,7 @@ namespace DayZRPLogHandler {
         }
 
         private void HidePos() {
-            if(IDBox.IsChecked == true) {
+            if (IDBox.IsChecked == true) {
                 NoIDNoPos();
             }
             else {
@@ -112,7 +109,7 @@ namespace DayZRPLogHandler {
         }
 
         private void UnhidePos() {
-            if(IDBox.IsChecked == true) {
+            if (IDBox.IsChecked == true) {
                 NoID();
             }
             else {

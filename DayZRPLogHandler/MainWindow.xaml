@@ -4,9 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DayZRPLogHandler"
-        Icon="favicon.ico"
         mc:Ignorable="d"
-        Title="DayZRP Log Handler by Whitename" Height="603.618" Width="1088.059" Background="#FFF0F0F0"
+        Title="DayZRP Log Handler by Ryan Broman (Whitename)" Height="603.618" Width="1088.059" Background="#FFF0F0F0"
         ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="{x:Type Control}">
@@ -81,6 +80,7 @@
                 <CheckBox Name="PosBox" Content="Hide Positions" Checked="HidePos" Unchecked="UnhidePos" IsEnabled="False"/>
             </StackPanel>
         </Grid>
+        <Label Content="Hofer Stinky" HorizontalAlignment="Left" Margin="809,75,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
