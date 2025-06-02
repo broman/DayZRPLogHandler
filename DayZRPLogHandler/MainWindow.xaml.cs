@@ -5,7 +5,7 @@ using System.Windows.Controls;
 
 namespace DayZRPLogHandler {
     public partial class MainWindow : Window {
-        private Parser _parser = new();
+        private NewParser _parser = new();
         private readonly TextBox[] _logs;
 
         public MainWindow() {
@@ -24,6 +24,7 @@ namespace DayZRPLogHandler {
                 log.Text = "";
             }
 
+            /*
             KillLogs.Text = string.Join("\n", _parser.Kills);
             HitLogs.Text = string.Join("\n", _parser.Hits);
             ChatLogs.Text = string.Join("\n", _parser.Chats);
@@ -35,6 +36,7 @@ namespace DayZRPLogHandler {
             PosBox.IsEnabled = true;
             SearchButton.IsEnabled = true;
             SearchText.IsEnabled = true;
+            */
         }
 
         private void SearchButtonClick(object sender, RoutedEventArgs e) {

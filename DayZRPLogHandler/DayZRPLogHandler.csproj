@@ -60,12 +60,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Events\ChatChannel.cs" />
+    <Compile Include="Events\ChatEvent.cs" />
+    <Compile Include="Events\ConnectionEvent.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Events\EventTime.cs" />
+    <Compile Include="Events\PlacementEvent.cs" />
+    <Compile Include="Events\Player.cs" />
+    <Compile Include="Events\PositionEvent.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewParser.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
