@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Controls;
+using DayZRPLogHandler.DB;
 
 namespace DayZRPLogHandler {
     public partial class MainWindow : Window {
@@ -11,6 +12,7 @@ namespace DayZRPLogHandler {
         public MainWindow() {
             InitializeComponent();
             _logs = new[] { KillLogs, HitLogs, ChatLogs, BuildingLogs, PositionLogs, ConnectionLogs };
+            var db = new DatabaseHandler();
         }
 
         private void UploadButtonClick(object sender, RoutedEventArgs e) {

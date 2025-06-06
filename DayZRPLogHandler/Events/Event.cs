@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows;
+using System.Numerics;
 
 namespace DayZRPLogHandler.Events {
     public abstract class Event {
         private readonly Player _player;
         private readonly EventTime _time;
-        private readonly Vector? _location = null;
+        private readonly Vector3? _location = null;
 
-        protected Event(DateTime time, Player player, Vector? location = null) {
+        protected Event(DateTime time, Player player, Vector3? location = null) {
             _player = player;
             _time = new EventTime(time);
             _location = location;
